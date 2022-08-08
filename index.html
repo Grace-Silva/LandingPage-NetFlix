@@ -42,13 +42,34 @@
             <!-- starts buttons -->
             <div class="buttons">
                 <a href=""><i class="fa-solid fa-play"></i> Play </a>
-                <a href=""><i class="fa-solid fa-plus"></i> Mi List </a>
+                <a href=""><i class="fa-solid fa-plus"></i> My List </a>
             </div>
             <!-- ends buttons -->
         </div>
     <!-- ends content -->  
+    <!-- starts play icon -->
+    <a class="play" onclick="toggleVideo();"><img src="img/play.png" alt="">Watch Trailer</a>
+    <!-- ends play icon -->
     </div>
     <!-- ends banner section -->
+    
+    <!-- starts video container -->
+    <div class="trailer">
+        <video src="trailer.mp4" controls=true></video>
+        <img src="img/close.png" alt="" class="close" onclick="toggleVideo();">
+    </div>
+    <!-- ends video container -->
+
+<!-- starts script -->
+<script>
+    function toggleVideo(){
+        const trailer = document.querySelector('.trailer');
+        const video = document.querySelector('video');
+        trailer.classList.toggle('active')
+        video.currentTime = 0;
+        video.pause();
+    }
+</script>
 
 
 </body>
